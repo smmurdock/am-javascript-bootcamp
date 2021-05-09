@@ -1,0 +1,27 @@
+// two arguments: student score, total possible score
+// 15/20 = 75% C = "You got a C (75%)."
+// A 90-100, B 80-89, C 70-79, D 60-69, F 0-59
+
+// calling a variable is not a reassignment
+const gradeCalculator = function(studentScore, totalPossibleScore) {
+  const percent = (studentScore / totalPossibleScore) * 100;
+  let letterGrade = '';
+
+  if (percent <= 100 && percent >= 90) {
+    letterGrade = 'A';
+  } else if (percent <= 89 && percent >= 80) {
+    letterGrade = 'B';
+  } else if (percent <= 79 && percent >= 70) {
+    letterGrade = 'C';
+  } else if (percent <= 69 && percent >= 60) {
+    letterGrade = 'D';
+  } else {
+    letterGrade = 'F';
+  }
+
+  return `You got a ${letterGrade} (${percent}%).`;
+};
+
+const result = gradeCalculator(88, 100);
+
+console.log(result);
